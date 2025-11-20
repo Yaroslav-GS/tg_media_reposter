@@ -81,13 +81,7 @@ async def handle_media(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
     msg = update.effective_message
 
-    # Берём подпись, если есть
-    caption = msg.caption or ""
     extra_kwargs = {}
-    if caption:
-        # если у тебя в каналах HTML-разметка — можно включить parse_mode="HTML"
-        # extra_kwargs["parse_mode"] = "HTML"
-        extra_kwargs["caption"] = caption
 
     if msg.photo:
         # photo — список размеров, последний обычно самый крупный
